@@ -16,6 +16,11 @@
 
   <body>
     <main>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
       <div class="content">
         <!-- NAVBAR -->
         <nav class="navbar">
@@ -54,12 +59,6 @@
               </a>
             </li>
           </ul>
-
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
         </nav>
 
         <!-- PROJECTS PAGE -->
@@ -67,69 +66,54 @@
           <h1 class="project-title">My Projects</h1>
 
           <div class="project-container">
-            <div class="project-description">
-              <h2>Project Overview</h2>
-              <p>
-                This project is built with React and demonstrates various web
-                development techniques such as creating reusable components,
-                managing state, and styling using CSS.
-              </p>
+            <div
+              class="panel active"
+              style="
+                background-image: url(https://picsum.photos/200/300?random=1);
+              "
+            >
+              <h3>Project 1</h3>
             </div>
-
-            <div class="project-features">
-              <h2>Features</h2>
-              <ul class="feature-list">
-                <li class="feature-list-item">Responsive layout</li>
-                <li class="feature-list-item">Reusable components</li>
-                <li class="feature-list-item">Styled with custom CSS</li>
-                <li class="feature-list-item">State management</li>
-              </ul>
+            <div
+              class="panel"
+              style="
+                background-image: url(https://picsum.photos/200/300?random=2);
+              "
+            >
+              <h3>Project 2</h3>
             </div>
-          </div>
-
-          <div class="project-container">
-            <div class="project-features">
-              <h2>Features</h2>
-              <ul class="feature-list">
-                <li class="feature-list-item">Responsive layout</li>
-                <li class="feature-list-item">Reusable components</li>
-                <li class="feature-list-item">Styled with custom CSS</li>
-                <li class="feature-list-item">State management</li>
-              </ul>
+            <div
+              class="panel"
+              style="
+                background-image: url(https://picsum.photos/200/300?random=3);
+              "
+            >
+              <h3>Project 3</h3>
             </div>
-            <div class="project-description">
-              <h2>Project Overview</h2>
-              <p>
-                This project is built with React and demonstrates various web
-                development techniques such as creating reusable components,
-                managing state, and styling using CSS.
-              </p>
+            <div
+              class="panel"
+              style="
+                background-image: url(https://picsum.photos/200/300?random=4);
+              "
+            >
+              <h3>Project 4</h3>
             </div>
-          </div>
-
-          <div class="project-container">
-            <div class="project-description">
-              <h2>Project Overview</h2>
-              <p>
-                This project is built with React and demonstrates various web
-                development techniques such as creating reusable components,
-                managing state, and styling using CSS.
-              </p>
-            </div>
-
-            <div class="project-features">
-              <h2>Features</h2>
-              <ul class="feature-list">
-                <li class="feature-list-item">Responsive layout</li>
-                <li class="feature-list-item">Reusable components</li>
-                <li class="feature-list-item">Styled with custom CSS</li>
-                <li class="feature-list-item">State management</li>
-              </ul>
+            <div
+              class="panel"
+              style="
+                background-image: url(https://picsum.photos/200/300?random=5);
+              "
+            >
+              <h3>Project 5</h3>
             </div>
           </div>
         </section>
       </div>
     </main>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- FOOTER -->
     <footer class="footer">
