@@ -8,14 +8,17 @@ body {
   font-family: "Libre Franklin", sans-serif;
   margin: 0;
   padding: 0;
-  background: url(/img/background-img/Site-Background.png);
+  background: linear-gradient(rgba(2, 38, 138, 0.5), rgba(175, 127, 154, 0.5)),
+    url(/img/background-img/Site-Background.png);
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
+  overscroll-behavior: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 100vw;
 }
 
 .navbar {
@@ -36,8 +39,8 @@ body {
 }
 
 .navbar-logo-icon {
-  height: 100px;
-  width: 100px;
+  height: 85px;
+  width: 85px;
 }
 
 .navbar-logo-text {
@@ -111,6 +114,7 @@ body {
 h1,
 h2,
 h3 {
+  font-weight: 400;
   color: #fff;
 }
 
@@ -138,18 +142,33 @@ p {
 .content {
   width: 90vw;
   min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
   flex: 1;
 }
 
 /* HOME */
 
-.home p {
-  text-align: center;
-  margin: 1rem;
+.home {
+  display: flex;
 }
 
 .home-page {
-  margin: 2rem auto 0;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-image {
+  width: 70%;
+  margin-bottom: 3rem;
+
+  & img {
+    width: 100%;
+    border-radius: 50px;
+  }
 }
 
 /* ABOUT */
@@ -210,6 +229,7 @@ p {
   padding: 1rem;
   flex: 1;
   text-align: left;
+  line-height: 1.4;
 }
 
 .core-competencies-item {
@@ -246,6 +266,11 @@ p {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+  outline: none;
+}
+
 .resume-button {
   background-color: #333;
   color: #fff;
@@ -262,6 +287,8 @@ p {
 }
 
 .resume-button::after {
+  background-color: #333;
+  opacity: 0.9;
   content: "";
   position: absolute;
   top: 0;
@@ -269,7 +296,6 @@ p {
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  background-color: #333;
   z-index: -1;
 }
 
@@ -299,24 +325,8 @@ p {
   transition: opacity 0.3s ease-in-out;
 }
 
-@keyframes glow {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
 .resume-button:hover {
   transform: scale(1.02);
-}
-
-.resume-button:active {
-  outline: none;
 }
 
 /* EDUCATION */
@@ -405,10 +415,8 @@ p {
   height: auto;
   width: 90vw;
   border-radius: 15px;
-  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
-  border: 0.1px solid #363535;
   flex-wrap: wrap;
 }
 
@@ -424,6 +432,7 @@ p {
   margin: 4px;
   position: relative;
   transition: flex 0.7s ease-in;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
 }
 
 .panel h3 {
@@ -484,8 +493,8 @@ p {
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
-  /* box-shadow: 0 4px 1px #61dafb inset; */
+  /* text-decoration: underline; */
+  box-shadow: 0 -4px 0px #fff inset;
 }
 
 /* MISC */
@@ -519,8 +528,8 @@ p {
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1200px) {
-  .navbar-logo-text {
-    font-size: 1.5rem;
+  .navbar {
+    margin-top: 1rem;
   }
 
   .hamburger {
@@ -595,8 +604,13 @@ p {
     font-size: 1.5rem;
   }
 
-  .navbar-list-item a:hover {
+  .navbar-list-item:hover {
     box-shadow: 0 -4px 0px #fff inset;
+    color: chocolate;
+  }
+
+  .navbar-list-item a:focus {
+    outline: none;
   }
 
   .developer-icon img {
@@ -620,18 +634,21 @@ p {
     justify-content: center;
     align-items: center;
   }
+
   .education-card {
     max-width: 550px;
     margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
   }
+
   .competencies-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .developer-icon img {
     text-decoration: none;
     height: 60px;
@@ -646,9 +663,33 @@ p {
   .panel:nth-of-type(5) {
     display: none;
   }
+
+  .footer-content p {
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .navbar-logo {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .navbar-logo-text {
+    display: none;
+  }
+
+  .home-image {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .about-description p {
+    text-align: center;
+  }
+
   .education-card {
     max-width: 350px;
     margin-bottom: 1rem;
@@ -657,7 +698,27 @@ p {
   }
 
   .project-container {
-    /* flex-direction: column; */
-    flex: 0;
+    display: block;
+  }
+
+  .footer-content p {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+}
+
+/* KEYFRAMES */
+
+@keyframes glow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
