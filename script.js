@@ -15,6 +15,7 @@ document.querySelectorAll(".navbar-list-item").forEach((n) =>
 );
 
 // PROJECTS SLIDER
+
 const panels = document.querySelectorAll(".panel");
 
 panels.forEach((panel) => {
