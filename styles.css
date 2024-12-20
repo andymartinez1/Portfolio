@@ -119,10 +119,6 @@ body {
 .projects,
 .contact {
   text-align: center;
-
-  & h1 {
-    margin: 1rem 0;
-  }
 }
 
 .main {
@@ -248,9 +244,16 @@ p {
 
 .about {
   text-align: center;
-  max-width: 1200px;
+  max-width: 90vw;
   margin: auto;
-  /* margin-bottom: 3rem; */
+
+  & p {
+    margin: 0 1rem 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-align: left;
+    line-height: 1.5;
+  }
 }
 
 .about-section {
@@ -260,23 +263,34 @@ p {
   flex-wrap: wrap;
 }
 
-.about p {
-  margin: 0 1rem 1rem;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  max-width: 900px;
-  text-align: left;
-  line-height: 1.5;
-}
-
-.about-img {
-  height: 225px;
-  width: 250px;
-  transition: 0.7s ease-in-out;
-}
-
 .about-img img {
   height: 100%;
+}
+
+.about-description {
+  width: 100%;
+
+  & p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.about-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+
+.about-item {
+  padding: 0 4rem;
+  width: 30%;
+
+  & img {
+    height: 100px;
+  }
 }
 
 .core-competencies {
@@ -291,15 +305,15 @@ p {
 
 .core-competencies-title {
   font-size: 2rem;
-  margin: 1rem 0 0.5rem;
+  margin: 2rem 0;
 }
 
 .core-competencies-list {
   margin: 0 1rem 2rem;
+  padding: 1rem;
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   flex: 1;
   text-align: left;
   line-height: 1.4;
@@ -307,8 +321,8 @@ p {
 
 .core-competencies-item {
   color: var(--color-white);
-  font-size: 1.2rem;
-  padding: 0.3rem;
+  font-size: 1.5rem;
+  padding: 0.4rem;
 }
 
 .developer-icons {
@@ -425,15 +439,11 @@ a {
 
 /* EDUCATION */
 
-.education-title {
-  margin-bottom: 0;
-}
-
 .education-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 auto 3rem;
+  margin: 2rem auto 3rem;
   max-width: 1500px;
 }
 
@@ -470,8 +480,8 @@ a {
 .education-name {
   width: 100%;
   font-size: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 0;
+  padding-top: 1rem;
+  margin: 0;
 }
 
 .education-school {
@@ -481,8 +491,9 @@ a {
 
 .education-description {
   font-size: 1.5rem;
-  margin-top: auto;
+  margin: auto;
   line-height: 1;
+  padding-bottom: 1rem;
 }
 
 .education-img {
@@ -501,9 +512,7 @@ a {
 /* PROJECTS */
 
 .project-container {
-  margin-bottom: 3rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto 3rem auto;
   text-align: center;
   height: auto;
   width: 90vw;
@@ -582,6 +591,10 @@ a {
   justify-content: center;
   align-items: center;
   height: 1.5rem;
+
+  & p {
+    font-size: 1.4rem;
+  }
 }
 
 .footer-links {
@@ -847,6 +860,34 @@ a {
     height: 70px;
     padding: 1rem;
   }
+
+  .about-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem;
+    margin: 0 auto;
+
+    & h2 {
+      margin: 0;
+    }
+
+    & p {
+      flex: 70%;
+    }
+  }
+
+  .competencies-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 1020px) {
@@ -871,13 +912,6 @@ a {
     margin-right: auto;
   }
 
-  .competencies-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .developer-icon img {
     text-decoration: none;
     height: 60px;
@@ -889,7 +923,7 @@ a {
   }
 
   .footer-content p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -921,19 +955,33 @@ a {
 
   .about-description p {
     text-align: center;
+    padding: 0;
+  }
+
+  .about-list {
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+
+  .about-item {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: 0;
+
+    & h2 {
+      margin-top: 0;
+    }
   }
 
   .education-card {
     max-width: 85vw;
-    margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 1rem auto;
   }
 
   .education-card-1,
   .education-card-2,
   .education-card-3 {
-    padding: 0.5rem 0.5rem;
+    padding: 0 0.5rem 1rem;
   }
 
   .education-name {
@@ -957,7 +1005,7 @@ a {
   }
 
   .footer-content p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 
