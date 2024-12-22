@@ -5,6 +5,16 @@
   --color-white: #fafafa;
   --color-black: #121212;
   --color-grey: #333;
+  --button-gradient: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
 }
 
 html,
@@ -156,6 +166,11 @@ p {
   font-size: 1rem;
 }
 
+a {
+  text-decoration: none;
+  outline: none;
+}
+
 .content {
   width: 90vw;
   min-height: 100vh;
@@ -226,7 +241,7 @@ p {
   border-radius: 15px;
   background-color: var(--color-grey);
   color: var(--color-white);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -353,82 +368,58 @@ p {
   align-items: center;
 }
 
-a {
-  text-decoration: none;
-  outline: none;
-}
-
 .resume-button {
-  background-color: var(--color-grey);
   color: var(--color-white);
-  border-radius: 15px;
+  font-size: 1.5rem;
+  padding: 15px 20px;
   border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  transition: all 0.5s ease;
-  padding: 15px;
-  position: relative;
   outline: none;
+  cursor: pointer;
+  position: relative;
   z-index: 0;
+  border-radius: 15px;
 }
 
 .resume-button::after {
   content: "";
-  background-color: var(--color-grey);
-  opacity: 1;
+  z-index: -1;
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 15px;
-  border: none;
-  outline: none;
-  z-index: -1;
+  background-color: var(--color-grey);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 .resume-button::before {
   content: "";
-  background: linear-gradient(
-    45deg,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
+  background: var(--button-gradient);
   position: absolute;
   top: -2px;
   left: -2px;
   background-size: 600%;
+  z-index: -1;
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   filter: blur(8px);
-  border: none;
-  border-radius: 15px;
-  opacity: 1;
   animation: glow 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
-  outline: none;
-  z-index: -1;
+  border-radius: 10px;
+  opacity: 0;
 }
 
-.resume-button:hover {
-  transform: scale(1.02);
+.resume-button:hover::before {
+  opacity: 1;
+}
+
+.resume-button:active:after {
+  background: transparent;
 }
 
 .resume-button:active {
   color: var(--color-grey);
   font-weight: bold;
-}
-
-.resume-button:active::after {
-  background-color: transparent;
 }
 
 .resume-button:focus,
@@ -544,32 +535,51 @@ a {
   }
 
   & span {
-    padding: 0.2rem 0.4rem;
-    margin-right: 0.2rem;
-    background-color: var(--color-grey);
-    border-radius: 15px;
     opacity: 0;
   }
 }
 
 .panel-description {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-top: auto;
-  margin: 0.25rem 0.75rem;
+  opacity: 0;
 }
 
 .panel.active {
   flex: 5;
 
-  & h3,
-  span {
+  & h3 {
     opacity: 1;
     transition: opacity 0.3s ease-in 0.3s;
   }
+
+  & span {
+    padding: 0.2rem 0.4rem;
+    background-color: var(--color-grey);
+    border-radius: 15px;
+    opacity: 0;
+    font-size: 1rem;
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
+  }
+
+  & .panel-description {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 0.25rem 0.75rem 0.2rem 0.75rem;
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
+  }
+
+  & .panel-tags {
+    margin-bottom: 0.2rem;
+  }
+}
+
+.project-summary p {
+  text-align: left;
+  font-size: 1.2rem;
 }
 
 /* FOOTER */
@@ -839,7 +849,7 @@ a {
     }
 
     & a {
-      margin: 0;
+      margin: 1rem auto 0 auto;
     }
   }
 
@@ -887,6 +897,15 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .panel.active {
+    & .panel-description {
+      width: 100%;
+      flex-direction: column;
+      justify-content: end;
+      align-items: center;
+    }
   }
 }
 
