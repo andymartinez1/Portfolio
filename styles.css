@@ -24,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(rgba(2, 38, 138, 0.5), rgba(175, 127, 154, 0.5)),
-    url(/img/background-img/Site-Background.png);
+    url(/img/background-img/Site-Background.webp);
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
@@ -534,29 +534,35 @@ a {
     opacity: 0;
   }
 
+  & .panel-description {
+    opacity: 0;
+
+    & .project-summary p {
+      opacity: 0;
+    }
+  }
+
   & span {
     opacity: 0;
   }
 }
 
-.panel-description {
-  opacity: 0;
+.panel-1 {
+  background-image: url(/img/projects/Under-Construction.webp);
+}
+
+.panel-2 {
+  background-image: url(/img/projects/Under-Construction.webp);
+}
+
+.panel-3 {
+  background-image: url(/img/projects/Under-Construction.webp);
 }
 
 .panel.active {
   flex: 5;
 
   & h3 {
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.3s;
-  }
-
-  & span {
-    padding: 0.2rem 0.4rem;
-    background-color: var(--color-grey);
-    border-radius: 15px;
-    opacity: 0;
-    font-size: 1rem;
     opacity: 1;
     transition: opacity 0.3s ease-in 0.3s;
   }
@@ -570,16 +576,28 @@ a {
     margin: 0.25rem 0.75rem 0.2rem 0.75rem;
     opacity: 1;
     transition: opacity 0.3s ease-in 0.3s;
+
+    & .project-summary p {
+      text-align: left;
+      font-size: 1.2rem;
+      opacity: 1;
+    }
+  }
+
+  & span {
+    padding: 0.2rem 0.4rem;
+    background-color: var(--color-grey);
+    border-radius: 15px;
+    opacity: 0;
+    font-size: 1rem;
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
   }
 
   & .panel-tags {
     margin-bottom: 0.2rem;
+    opacity: 1;
   }
-}
-
-.project-summary p {
-  text-align: left;
-  font-size: 1.2rem;
 }
 
 /* FOOTER */
