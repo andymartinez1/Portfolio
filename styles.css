@@ -548,7 +548,7 @@ a {
 }
 
 .panel-1 {
-  background-image: url(/img/projects/Under-Construction.webp);
+  background-image: url(/img/projects/Shifts-Logger.webp);
 }
 
 .panel-2 {
@@ -582,6 +582,19 @@ a {
       font-size: 1.2rem;
       opacity: 1;
     }
+
+    & .project-link {
+      margin: 0 0 1rem 4rem;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      background-color: var(--color-grey);
+      border-radius: 15px;
+
+      & a {
+        color: var(--color-white);
+      }
+    }
   }
 
   & span {
@@ -595,7 +608,7 @@ a {
   }
 
   & .panel-tags {
-    margin-bottom: 0.2rem;
+    margin: 0 0 0.2rem 2rem;
     opacity: 1;
   }
 }
@@ -923,6 +936,15 @@ a {
       flex-direction: column;
       justify-content: end;
       align-items: center;
+
+      & .project-link {
+        margin: 1rem auto;
+        font-size: 1.2rem;
+      }
+
+      & .panel-tags {
+        margin: 0 auto;
+      }
     }
   }
 }
