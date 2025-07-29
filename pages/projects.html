@@ -38,19 +38,19 @@
             <li class="navbar-list-item">
               <a href="/">
                 <img src="/img/icons/Home.svg" alt="Home" />
-                <p>&nbsp; Home</p>
+                <p>&nbsp;Home</p>
               </a>
             </li>
             <li class="navbar-list-item">
               <a href="about.html">
                 <img src="/img/icons/About.svg" alt="About" />
-                <p>&nbsp; About</p>
+                <p>&nbsp;About</p>
               </a>
             </li>
             <li class="navbar-list-item">
               <a href="education.html">
                 <img src="/img/icons/Education.svg" alt="Education" />
-                <p>&nbsp; Education</p>
+                <p>&nbsp;Education</p>
               </a>
             </li>
             <li class="navbar-list-item">
@@ -60,7 +60,7 @@
                   alt="Projects"
                   class="current"
                 />
-                <p class="current">&nbsp; Projects</p>
+                <p class="current">&nbsp;Projects</p>
               </a>
             </li>
           </ul>
@@ -68,66 +68,87 @@
 
         <!-- PROJECTS PAGE -->
         <section class="projects">
-          <div class="project-container">
-            <div class="panel panel-1 active">
-              <div class="panel-description">
-                <h3>Shifts Logger Console App</h3>
-                <div class="project-summary">
-                  <p>
-                    This is a console app using both .NET and ASP.NET. The
-                    application allows users to log their shifts and view their
-                    shift history. It uses Entity Framework for database
-                    management and SQL Server for data storage.
-                  </p>
-                </div>
-                <div class="project-link">
-                  <a href="https://github.com/andymartinez1/Shifts-Logger-App"
-                    >View Project on GitHub</a
-                  >
-                </div>
-                <div class="panel-tags">
-                  <span>C#</span>
-                  <span>Entity Framework</span>
-                  <span>SQL Server</span>
-                </div>
-              </div>
+          <div class="project-card">
+            <div class="project-description">
+              <h2>Shifts Logger Console App</h2>
+              <p>
+                This project is made of a Web API and a console application that
+                consumes the API. It allows users to create, read, update, and
+                delete their shifts. It uses Entity Framework for database
+                management and SQL Server for data storage.
+              </p>
             </div>
-            <div class="panel panel-2">
-              <div class="panel-description">
-                <h3>Project 2</h3>
-                <div class="project-summary">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    ac nunc nec odio ultricies tincidunt. Nullam nec nunc
-                    ultricies, ultricies nunc nec, ultricies odio. Nullam nec
-                    nunc ultricies, ultricies nunc nec, ultricies odio.
-                  </p>
-                </div>
-                <div class="panel-tags">
-                  <span>Spring Boot</span>
-                  <span>Spring Boot</span>
-                  <span>Spring Boot</span>
-                </div>
-              </div>
+            <div class="project-link">
+              <a href="https://github.com/andymartinez1/Shifts-Logger-App">
+                View on GitHub
+              </a>
             </div>
-            <div class="panel panel-3">
-              <div class="panel-description">
-                <h3>Project 3</h3>
-                <div class="project-summary">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    ac nunc nec odio ultricies tincidunt. Nullam nec nunc
-                    ultricies, ultricies nunc nec, ultricies odio. Nullam nec
-                    nunc ultricies, ultricies nunc nec, ultricies odio.
-                  </p>
-                </div>
-                <div class="panel-tags">
-                  <span>Spring Boot</span>
-                  <span>Spring Boot</span>
-                  <span>Spring Boot</span>
-                </div>
-              </div>
+            <div class="project-tags">
+              <span>C#</span>
+              <span>Entity Framework</span>
+              <span>SQL Server</span>
             </div>
+            <div class="project-image">
+              <img src="/img/projects/Shifts-Logger.gif" alt="Project" />
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/img/projects/Coding-Tracker.webp" alt="Project" />
+            </div>
+            <div class="project-description">
+              <h2>Coding Tracker</h2>
+              <p>
+                This console application allows users to track their coding
+                sessions. It showcases CRUD operations using Dapper for data
+                access and SQLite for the database. It follows the Repository
+                Pattern with dependency injection for better testability. It
+                also utilizes MSTest for unit testing on validation methods.
+              </p>
+            </div>
+            <div class="project-link">
+              <a href="#"> View on GitHub</a>
+            </div>
+            <div class="project-tags">
+              <span>C#</span>
+              <span>SQLite</span>
+              <span>Dapper</span>
+              <span>MSTest</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-description">
+              <h2>Employee Management System</h2>
+              <p>
+                This project is a web application that allows users to manage
+                employee records. It provides features for creating, reading,
+                updating, and deleting employee information. The application is
+                built using Java 17, Spring Boot 3, React, and MySQL.
+              </p>
+            </div>
+            <div class="project-link">
+              <a href="#"> View on GitHub</a>
+            </div>
+            <div class="project-tags">
+              <span>Java 17</span>
+              <span>Spring Boot 3</span>
+              <span>React</span>
+              <span>MySQL</span>
+            </div>
+            <div class="project-image">
+              <img
+                src="/img/projects/Employee-Management-System.webp"
+                alt="Project"
+              />
+            </div>
+          </div>
+
+          <div class="project-github">
+            <a href="https://github.com/andymartinez1">
+              View more of my projects on GitHub
+            </a>
           </div>
         </section>
       </div>
