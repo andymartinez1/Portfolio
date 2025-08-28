@@ -929,6 +929,12 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
   .navbar {
     margin: 1rem auto 0 auto;
   }
