@@ -44,6 +44,7 @@ body {
     ),
     url(/img/background-img/Site-Background.webp);
   background-repeat: no-repeat;
+  background-position: top;
   background-size: cover;
   background-attachment: fixed;
   z-index: -100;
