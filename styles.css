@@ -22,6 +22,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+  background: linear-gradient(45deg, #222, #111);
   overflow-x: hidden;
   overscroll-behavior: none;
   display: flex;
@@ -29,6 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 100%;
+  z-index: -101;
 }
 
 .fixed-background {
@@ -400,7 +402,7 @@ a {
 }
 
 .education-card {
-  background-color: rgb(0, 0, 0, 0.3);
+  background-color: #333;
   margin: 1rem 2rem;
   text-align: center;
   height: auto;
@@ -464,7 +466,7 @@ a {
 /* PROJECTS */
 
 .projects {
-  margin: 1rem 0 3rem;
+  margin: 3rem 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1rem;
@@ -704,6 +706,10 @@ a {
 }
 
 @media screen and (max-width: 1200px) {
+  .fixed-background {
+    background-attachment: scroll;
+  }
+
   .content {
     width: 100vw;
   }
@@ -876,6 +882,7 @@ a {
   }
 
   .projects {
+    margin-top: 3rem;
     grid-template-columns: repeat(2, 1fr);
   }
 
